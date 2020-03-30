@@ -17,7 +17,6 @@ namespace ACMApp
 
         public faceDataModel(IEnumerable<Vector3> facePts, IEnumerable<int> faceIndices, string faceHostId, IList<IEnumerable<Vector3>> edgePts)
         {
-            geoType = geoDataType.FACE;
             faceMaterialTest = new DiffuseMaterial() {DiffuseColor = new Color4(28, 62, 149, 100) };
 
             edges = createEdgeDataModels(edgePts);
@@ -28,9 +27,7 @@ namespace ACMApp
             mb.TriangleIndices.AddRange(faceIndices);
 
             geometry = mb.ToMeshGeometry3D();
-            
-            //material = new DiffuseMaterial() { DiffuseColor = new Color4(28, 62, 149, 255) };
-
+         
             hostFaceId = faceHostId;
         }
 
